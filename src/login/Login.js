@@ -1,35 +1,51 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useForm } from 'react-hook-form';
 import './Login.css';
+import App from '../App';
 
 function Login() {
-    const [auth, setAuth] = useState({isAuthenticated: false, accessToken: ''});
-
-    async function userLogin () {
-        const rawResponse = await fetch('http://localhost:5000/api/v1/userauth/getToken', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({"userId":"USR12", "password": "random"})
-      });
-      const content = await rawResponse.json();
-      if (rawResponse.status === 201) {
-        setAuth({isAuthenticated: true, accessToken: content.accessToken});
-      } else {
-        alert('Wrong password!');
-      } 
+  const { register, handleSubmit, errors } = useForm();
+  const authData = localStorage.getItem("auth");
+  const onSubmit = async function (loginData) {
+    
+    const rawResponse = await fetch('http://localhost:5000/api/v1/userauth/getToken', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ "userId": loginData.userid, "password": loginData.password })
+    });
+    const content = await rawResponse.json();
+    if (rawResponse.status === 201) {
+      localStorage.setItem("auth", JSON.stringify({ isAuthenticated: true, accessToken: content.accessToken }));
+      console.log("Login.js", localStorage.getItem("auth"));
+      window.location.reload();
+    } else {
+      alert('Wrong password!', rawResponse.status);
     }
-    return (
-    <div className="container">
-        <div className="loginForm">
-        <h2>DO-MGMT</h2>
-        <input className="u-full-width" type="text" placeholder="User ID" />
-        <input className="u-full-width" type="password" placeholder="Password" />
-        <button className="loginButton" onClick={userLogin}>Login</button>
-        </div>
+  }
+  return (
+    <div>
+      {
+        authData !== null && authData.isAuthenticated ? <App/> :
+          <div className="container">
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <div className="loginForm">
+                <h2>DO-MGMT</h2>
+                {errors.userid && <code className="error">User ID is required</code>}
+                <input className="u-full-width" type="text" placeholder="User ID" name="userid" ref={register({ required: true })} />
+                {errors.password && <code className="error">Password is invalid</code>}
+                <input className="u-full-width" type="password" placeholder="Password" name="password" ref={register({ required: true, minLength: 6 })} />
+                <button className="loginButton" >Login</button>
+                <br />
+                <a href="#">Forgot Password</a>
+              </div>
+            </form>
+          </div>
+      }
     </div>
-    );
+  );
 }
 
 export default Login;

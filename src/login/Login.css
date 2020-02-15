@@ -8,7 +8,8 @@
 }
 
 .loginButton:hover {
-    background: #cccccc;
+    background-color: seagreen;
+    color: seashell;
 }
 
 .loginButton:active {
@@ -17,4 +18,16 @@
 
 input { 
     text-align: center; 
+}
+
+.error {
+    color: red;
+}
+
+.forgotPassword {
+    width: 50%;
+}
+
+.forgotPassword:hover {
+    background-color: yellow;
 }
