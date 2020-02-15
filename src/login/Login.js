@@ -19,7 +19,6 @@ function Login() {
     const content = await rawResponse.json();
     if (rawResponse.status === 201) {
       localStorage.setItem("auth", JSON.stringify({ isAuthenticated: true, accessToken: content.accessToken }));
-      console.log("Login.js", localStorage.getItem("auth"));
       window.location.reload();
     } else {
       alert('Wrong password!', rawResponse.status);

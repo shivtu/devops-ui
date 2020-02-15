@@ -416,3 +416,138 @@ there.
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
+
+
+/*Custom CSS components*/
+
+  /**Side Nav CSS**/
+  .side-nav {
+    background: #373d42;
+    color: white;
+    top: 0;
+    bottom: 0;
+    min-height: 700px;
+    width: 90%;
+  }
+
+  .side-nav-button {
+    background: #373d42;
+    color: white;
+    width: 95%;
+    text-align: left;
+    /* font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    height: 5%;
+    border-bottom-color: #212121;
+    padding-left: 1%;
+    padding-top: 5%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+    font-stretch: extra-expanded;
+  }
+
+  .side-nav-button:hover {
+    background: #212121;
+  }
+
+  .side-nav > input{
+    vertical-align: middle;
+    margin: 2%;
+    width: 95%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #373d42;
+  }
+
+  .side-nav > input:focus {
+    vertical-align: middle;
+    /* margin: 3%; */
+    width: 95%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #373d42;
+  }
+
+  .side-nav > a{
+    text-decoration: none;
+  }
+
+  /**Side Nav CSS**/
+
+  .divider {
+    border: 2px solid #880E4F; 
+  }
+  
+  .divider-light {
+    border-bottom: 1px solid black;
+  }
+
+  .success {
+    background: #2E7D32;
+    color: white;
+  }
+  
+  .error {
+    background: #B71C1C;
+    color: white;
+  }
+  
+  .basic {
+    background: #373d42;
+    color: white;
+  }
+
+  span {
+    margin: 5px;
+    padding: 5px;
+  }
+
+  .card {
+    display: inline-block;
+    margin: 1em;
+    width: 30%;
+    border: 2px solid black;
+    height: 50%;
+    position: relative;
+  }
+  
+  .cardHeader {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    position: relative;
+    height: 10%;
+    text-align: center;
+  }
+  
+  .cardBody {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    height: 85%;
+    position: relative;
+  }
+  
+  .cardFooter{
+    height: 5%;
+    background: #eeeeee;
+    color: black;
+    text-align: center;
+  }
+
+  /**Header section*/
+  .header-section {
+    height: 50px;
+    background: #373d42;
+    color: white;
+    padding: 3px;
+    font-family: 'Courier New', Courier, monospace;
+    padding-top: 1%;
+  }
+
+  .floatRight {
+    float: right;
+    padding-right: 1em;
+  }
+  /**Header section*/
+
+  /*Custom CSS components*/
