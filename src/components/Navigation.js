@@ -5,6 +5,7 @@ import NewProjectRequest from './newprojectrequest/NewProjectRequest';
 import Dashboard from './dashboard/Dashboard';
 import Epic from './epic/Epic';
 import Sprint from './sprint/Sprint';
+import { Link } from 'react-router-dom';
 
 function Navigation(props) {
     const displayNewProjectPage = () =>{
@@ -31,31 +32,31 @@ function Navigation(props) {
         <div className="side-nav">
             <input type="text" placeholder="Request ID.." />
             <div className="divider-light"></div>
-            <a href="#" onClick={displayDashBoard}>
+            <Link to={"/"}>
                 <div className="side-nav-button">
                     <span><FaTachometerAlt/></span>Dashboard
                 </div>
-            </a>
-            <a href="#" onClick={displayNewProjectPage}>
+            </Link>
+            <Link to={"/newproject"}>
                 <div className="side-nav-button">
                     <span><FaBriefcase/></span>New Project Request
                 </div>
-            </a>
-            <a href="#" onClick={displayEpicPage}>
+            </Link>
+            <Link to={"/epic"}>
                 <div className="side-nav-button">
                     <span><FaScroll/></span>New Epic
                 </div>
-            </a>
-            <a href="#" onClick={displaySprintPage}>
+            </Link>
+            <Link to={"/sprint"}>
                 <div className="side-nav-button">
                     <span><FaStopwatch/></span>New Sprint
                 </div>
-            </a>
-            <a href="#">
+            </Link>
+            <Link to={"/bugfix"}>
                 <div className="side-nav-button">
                     <span><FaBug/></span>Bug Fix Request
                 </div>
-            </a>
+            </Link>
             <a href="#">
                 <div className="side-nav-button">
                     <span><FaExclamationTriangle/></span>Application Failure Incident
