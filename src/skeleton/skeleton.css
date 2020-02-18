@@ -54,7 +54,7 @@
     width: 80%; }
   .column,
   .columns {
-    margin-left: 4%; }
+    margin-left: 2%; }
   .column:first-child,
   .columns:first-child {
     margin-left: 0; }
@@ -560,6 +560,16 @@ there.
 
   input:focus {
     background-color: burlywood;
-    
+  }
+
+  textarea {
+    border-color: gray;
+    color: black;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  textarea:focus {
+    background-color: burlywood;
   }
   /*Custom CSS components*/

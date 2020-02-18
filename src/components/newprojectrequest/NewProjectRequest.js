@@ -2,28 +2,27 @@ import React from 'react'
 
 function NewProjectRequest() {
     return (
-        <div className="container">
+        <div >
             <h3>Create a New Project Request</h3>
-            <hr/>
+            <hr />
             <form>
-                <div className="row">
-                    <div className="four columns">
-                        <label>Customer Name*</label>
-                        <input className="u-full-width" type="text" placeholder="customer name..." id="_customerName" />
-                    </div>
-                    <div className="four columns">
-                        <label>Project Name*</label>
-                        <input className="u-full-width" type="text" placeholder="Summary..." id="_customerName" />
-                    </div>
-                    <div className="four columns">
-                        <label>Priority*</label>
-                        <select className="u-full-width" id="exampleRecipientInput">
-                            <option value="Option 1">1</option>
-                            <option value="Option 2">2</option>
-                            <option value="Option 3">3</option>
-                        </select>
-                    </div>
+                <div className="four columns">
+                    <label>Customer Name*</label>
+                    <input className="u-full-width" type="text" placeholder="customer name..." id="_customerName" />
                 </div>
+                <div className="four columns">
+                    <label>Project Name*</label>
+                    <input className="u-full-width" type="text" placeholder="Summary..." id="_projectName" />
+                </div>
+                <div className="four columns">
+                    <label>Priority*</label>
+                    <select className="u-full-width" id="exampleRecipientInput">
+                        <option value="Option 1">1</option>
+                        <option value="Option 2">2</option>
+                        <option value="Option 3">3</option>
+                    </select>
+                </div>
+
                 <label>Description*</label>
                 <textarea className="u-full-width" placeholder="user story …" id="_description"></textarea>
                 <label className="example-send-yourself-copy">

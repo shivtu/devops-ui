@@ -21,6 +21,7 @@ input {
 }
 
 .error {
+    background-color: white;
     color: red;
 }
 
