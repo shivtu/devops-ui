@@ -1,34 +1,28 @@
 import React, { useState } from 'react';
 import '../modals/Modals.css';
 
-function Modals(config) {
-    console.log(config.props.buttonText);
-    let buttonText;
-    if(config.props.buttonText) {
-        buttonText = config.props.buttonText;
-     } else {
-        buttonText =  "Close";
-     }
+function Modals(modalConfig) {
 
-  const hideModal = () =>{
+    // console.log(modalConfig.props);
+    let modalButtonText = modalConfig.props.modalButtonText ? modalConfig.props.modalButtonText : "Close";
+    let modalHeaderText = modalConfig.props.modalHeaderText ? modalConfig.props.modalHeaderText : null;
+    let modalBody = modalConfig.props.modalBody ? modalConfig.props.modalBody : null;
+    let headerBackgroundColor = modalConfig.props.headerColor ? modalConfig.props.headerColor : "white";
+    let modalHeaderTextColor = modalConfig.props.modalHeaderTextColor ? modalConfig.props.modalHeaderTextColor : "black";
+    let toggleModalView = modalConfig.props.displayModal ? "block" : "none";   
 
-  }
+    const hideModal = () => {
+        modalConfig.props.modalState(false);
+    }
     return (
-        <div>
+        <div style={{display : toggleModalView}}>
+            {console.log('modalState', modalConfig.props.displayModal)}
             <div className="modal">
                 <div className="modal-content">
                     <span className="close" onClick={hideModal}>&times;</span>
-                    <h2>Modal Content</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eros ante, 
-                        vulputate in nunc id, mollis dignissim justo. Vestibulum nec dolor tortor.
-                        Donec vestibulum mauris at odio lobortis, porta consectetur enim mollis.
-                        Pellentesque porttitor viverra metus, eget viverra nibh commodo vitae.
-                        In aliquet magna sit amet ex dapibus porta. Integer ac pharetra arcu, in ullamcorper mi.
-                        Curabitur ac risus non massa varius fringilla. Suspendisse ac dui non mauris posuere feugiat 
-                        ut id purus. In ligula metus, suscipit in dapibus in, lacinia non ipsum. Vestibulum ante ipsum 
-                    </p>
-                        <button style={{ marginLeft: "80%",  minWidth: '20%', overflow: 'hidden', textAlign: 'center'}}>{buttonText}</button>
+                    <h2 style={{ backgroundColor: headerBackgroundColor, color: modalHeaderTextColor }}>{modalHeaderText}</h2>
+                    {modalBody}
+                    <button style={{ marginLeft: "80%", minWidth: '20%', overflow: 'hidden', textAlign: 'center' }} onClick={hideModal} >{modalButtonText}</button>
                 </div>
             </div>
         </div>

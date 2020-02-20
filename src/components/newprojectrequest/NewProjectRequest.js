@@ -2,7 +2,7 @@ import React from 'react'
 
 function NewProjectRequest() {
     return (
-        <div >
+        <div className="container">
             <h3>Create a New Project Request</h3>
             <hr />
             <form>

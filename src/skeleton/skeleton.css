@@ -54,7 +54,7 @@
     width: 80%; }
   .column,
   .columns {
-    margin-left: 2%; }
+    margin-left: 4%; }
   .column:first-child,
   .columns:first-child {
     margin-left: 0; }
@@ -199,15 +199,15 @@ input[type="reset"]:focus,
 input[type="button"]:focus {
   color: #333;
   border-color: #888;
-  outline: 0; }
+  outline: 0;}
 .button.button-primary,
 button.button-primary,
 input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
-  color: #FFF;
-  background-color: #33C3F0;
-  border-color: #33C3F0; }
+  color: #333;
+  background-color: white;
+  border-color: #333; }
 .button.button-primary:hover,
 button.button-primary:hover,
 input[type="submit"].button-primary:hover,
@@ -219,8 +219,8 @@ input[type="submit"].button-primary:focus,
 input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
   color: #FFF;
-  background-color: #1EAEDB;
-  border-color: #1EAEDB; }
+  background-color: burlywood;
+  border-color: #333; }
 
 
 /* Forms
@@ -266,7 +266,8 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 textarea:focus,
 select:focus {
-  border: 1px solid #33C3F0;
+  border: 1px solid #333;
+  background-color: burlywood;
   outline: 0; }
 label,
 legend {
@@ -426,8 +427,8 @@ there.
     color: white;
     top: 0;
     bottom: 0;
-    min-height: 700px;
-    width: 90%;
+    min-height: 1000px;
+    width: 100%;
   }
 
   .side-nav-button {
@@ -551,18 +552,18 @@ there.
   }
   /**Header section*/
 
-  input {
+  input[type="text"] {
     border-color: gray;
     color: black;
     font-size: medium;
     font-family: Arial, Helvetica, sans-serif;
   }
 
-  input:focus {
+  input[type="text"]:focus {
     background-color: burlywood;
   }
 
-  textarea {
+  /* textarea {
     border-color: gray;
     color: black;
     font-size: medium;
@@ -571,5 +572,5 @@ there.
 
   textarea:focus {
     background-color: burlywood;
-  }
+  } */
   /*Custom CSS components*/
