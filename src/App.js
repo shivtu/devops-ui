@@ -12,6 +12,8 @@ import Sprint from './components/sprint/Sprint';
 import NewProjectRequest from './components/newprojectrequest/NewProjectRequest';
 import Epic from './components/epic/Epic';
 import BugFixRequest from './components/bugfixrequest/BugFixRequest';
+import Security from './components/security/Security';
+import Analytics from './components/analytics/Analytics';
 
 
 function App() {
@@ -35,6 +37,8 @@ function App() {
                 <Route path="/newproject" exact component={ NewProjectRequest } />
                 <Route path="/epic" exact component={ Epic } />
                 <Route path="/bugfix" exact component={ BugFixRequest } />
+                <Route path="/security" exact component={ Security } />
+                <Route path="/analytics" exact component={ Analytics } />
                 
               </div>
             </div>
