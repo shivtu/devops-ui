@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import SimpleModal from '../modals/SimpleModal';
+import SimpleModal from '../../assets/modals/SimpleModal';
 
 function Dashboard() {
   const [ticketDump, setData] = useState([]);

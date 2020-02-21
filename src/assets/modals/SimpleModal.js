@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../modals/Modals.css';
+import './Modals.css';
 
 function Modals(modalConfig) {
 

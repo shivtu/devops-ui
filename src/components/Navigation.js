@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { FaTachometerAlt, FaBriefcase, FaBug, FaExclamationTriangle, FaScroll, FaStopwatch, FaLock, FaChartBar } from 'react-icons/fa';
+import { FaTachometerAlt, FaBriefcase, FaBug, FaExclamationTriangle, FaScroll, FaStopwatch, FaLock, FaChartBar, FaSearch } from 'react-icons/fa';
 import NewProjectRequest from './newprojectrequest/NewProjectRequest';
 import Dashboard from './dashboard/Dashboard';
 import Epic from './epic/Epic';
@@ -8,29 +8,9 @@ import Sprint from './sprint/Sprint';
 import { Link } from 'react-router-dom';
 
 function Navigation(props) {
-    const displayNewProjectPage = () => {
-        // console.log(props); /**props.value is the whole function from App.js passed here */
-        document.title = 'New Project Requests'
-        props.vlaue({ componentName: <NewProjectRequest /> });
-    }
-
-    const displayDashBoard = () => {
-        document.title = 'DashBoard'
-        props.vlaue({ componentName: <Dashboard /> });
-    }
-
-    const displayEpicPage = () => {
-        document.title = 'New Epic'
-        props.vlaue({ componentName: <Epic /> });
-    }
-
-    const displaySprintPage = () => {
-        document.title = 'New Sprint'
-        props.vlaue({ componentName: <Sprint /> });
-    }
     return (
         <div className="side-nav">
-            <input type="text" placeholder="Request ID.." />
+            <input type="text" placeholder="Request ID.." /><span><FaSearch/></span>
             <div className="divider-light"></div>
             <Link to={"/"}>
                 <div className="side-nav-button">
