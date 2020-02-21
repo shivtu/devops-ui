@@ -55,7 +55,7 @@ function Dashboard() {
             displayModal: true
           }
         }
-      /> : console.log(<SimpleModal />)}
+      /> : null}
       <button onClick={() => modalState(true)}>Open Modal</button>
     </div>
   );

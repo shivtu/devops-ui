@@ -563,6 +563,36 @@ there.
     background-color: burlywood;
   }
 
+  input[type="file"] {
+    opacity: 0;
+    min-height: 38px;
+    max-width: 70%;
+  }
+  
+  .fileInputSpan {
+    display: flex;
+    border: 1px solid black;
+    height: 38px;;
+    border-radius: 5px;
+    
+  }
+
+  .fileInputSpan:hover {
+    background-color: burlywood;
+  }
+
+  .fileInputText {
+    background-color: #373d42;
+    color: white;
+    height: 27px;
+    border-radius: 5px;
+    border: none;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
   /* textarea {
     border-color: gray;
     color: black;
