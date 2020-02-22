@@ -1,0 +1,16 @@
+.cardContainer {
+  border: 2px solid gray;
+  min-width: 100%;
+  min-height: 100px;
+  border-radius: 5px;
+}
+
+.cardHeader {
+  font-size: x-large;
+  text-align: center;
+  padding: 5px;
+}
+
+.cardBody {
+  padding: 5px;
+}

@@ -1,18 +1,29 @@
 import React, { useState, useEffect } from "react";
 
 import SimpleModal from '../../assets/modals/SimpleModal';
+import Cards from "../../assets/cards/Cards";
 
 function Dashboard() {
   const [ticketDump, setData] = useState([]);
   const [showModal, modalState] = useState(false);
   useEffect(() => {
-    const response = fetch("http://localhost:5000/api/v1/newproject/findAll");
+    const authData = JSON.parse(localStorage.getItem("auth"));
+    console.log('authData', authData);
+    const response = fetch("http://localhost:5000/api/v1/newproject/find/findall", {
+      method: "GET",
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': authData.accessToken
+      }
+    });
     const data = response.then(data => data.json());
     data
-      .then(result => {
-        console.log('result', result);
-        // result !== 'Unauthenticated request' ? setData(result.result) : setData([]);
-        // setData(result.result);
+      .then(res => {
+        if(res.result === "Unauthenticated request") {
+          localStorage.clear();
+        } else {
+          console.log(res);
+        }
       })
       .catch((err) => {
         console.log("err".err);
@@ -20,29 +31,37 @@ function Dashboard() {
   }, []);
 
   return (
-    <div >
-      <h1>DashBorad</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eros ante,
-        vulputate in nunc id, mollis dignissim justo. Vestibulum nec dolor tortor.
-        Donec vestibulum mauris at odio lobortis, porta consectetur enim mollis.
-        Pellentesque porttitor viverra metus, eget viverra nibh commodo vitae.
-        In aliquet magna sit amet ex dapibus porta. Integer ac pharetra arcu, in ullamcorper mi.
-        Curabitur ac risus non massa varius fringilla. Suspendisse ac dui non mauris posuere feugiat
-        ut id purus. In ligula metus, suscipit in dapibus in, lacinia non ipsum. Vestibulum ante ipsum
-          </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eros ante,
-        vulputate in nunc id, mollis dignissim justo. Vestibulum nec dolor tortor.
-        Donec vestibulum mauris at odio lobortis, porta consectetur enim mollis.
-        Pellentesque porttitor viverra metus, eget viverra nibh commodo vitae.
-        In aliquet magna sit amet ex dapibus porta. Integer ac pharetra arcu, in ullamcorper mi.
-        Curabitur ac risus non massa varius fringilla. Suspendisse ac dui non mauris posuere feugiat
-        ut id purus. In ligula metus, suscipit in dapibus in, lacinia non ipsum. Vestibulum ante ipsum
-          </p>
-          <a href="#">This is a URL</a>
-          <br/>
-      {showModal ? <SimpleModal
+     <div className="container">
+     <h3>Dashboard</h3>
+      <div className="row">
+        <div className="three columns">
+          <Cards cardConfig={{header: 'Projects'}} />
+        </div>
+        <div className="three columns">
+          <Cards cardConfig={{header: 'Epics'}} />
+        </div>
+        <div className="three columns">
+          <Cards cardConfig={{header: 'Sprints'}} />
+        </div>
+        <div className="three columns">
+          <Cards cardConfig={{header: 'Bugs'}} />
+        </div>
+      </div>
+      <hr/>
+     <div className="row">
+      <div className="twelve columns">
+        <h5>News Feed</h5>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+     </div>
+      
+      
+      {/* {showModal ? <SimpleModal
         props={
           {
             modalButtonText: "close",
@@ -56,7 +75,7 @@ function Dashboard() {
           }
         }
       /> : null}
-      <button onClick={() => modalState(true)}>Open Modal</button>
+      <button onClick={() => modalState(true)}>Open Modal</button> */}
     </div>
   );
 }

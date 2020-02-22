@@ -464,7 +464,7 @@ there.
   .side-nav > input:focus {
     vertical-align: middle;
     /* margin: 3%; */
-    width: 95%;
+    /* width: 95%; */
     padding: 5px;
     border-radius: 5px;
     border: 1px solid #373d42;
@@ -502,38 +502,6 @@ there.
   span {
     margin: 5px;
     padding: 5px;
-  }
-
-  .card {
-    display: inline-block;
-    margin: 1em;
-    width: 30%;
-    border: 2px solid black;
-    height: 50%;
-    position: relative;
-  }
-  
-  .cardHeader {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
-    position: relative;
-    height: 10%;
-    text-align: center;
-  }
-  
-  .cardBody {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 15px;
-    text-align: center;
-    height: 85%;
-    position: relative;
-  }
-  
-  .cardFooter{
-    height: 5%;
-    background: #eeeeee;
-    color: black;
-    text-align: center;
   }
 
   /**Header section*/
