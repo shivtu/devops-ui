@@ -1,6 +1,6 @@
 /* The Modal (background) */
 .modal {
-  position: absolute; /* Stay in place */
+  position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   padding-top: 100px; /* Location of the box */
   left: 0;

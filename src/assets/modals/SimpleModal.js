@@ -3,7 +3,6 @@ import './Modals.css';
 
 function Modals(modalConfig) {
 
-    // console.log(modalConfig.props);
     let modalButtonText = modalConfig.props.modalButtonText ? modalConfig.props.modalButtonText : "Close";
     let modalHeaderText = modalConfig.props.modalHeaderText ? modalConfig.props.modalHeaderText : null;
     let modalBody = modalConfig.props.modalBody ? modalConfig.props.modalBody : null;
@@ -16,7 +15,6 @@ function Modals(modalConfig) {
     }
     return (
         <div style={{display : toggleModalView}}>
-            {console.log('modalState', modalConfig.props.displayModal)}
             <div className="modal">
                 <div className="modal-content">
                     <span className="close" onClick={hideModal}>&times;</span>

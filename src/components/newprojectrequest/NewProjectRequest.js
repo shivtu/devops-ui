@@ -1,5 +1,4 @@
-import React from 'react'
-import { FaSearch } from 'react-icons/fa'
+import React from 'react';
 
 function NewProjectRequest() {
     return (
@@ -62,11 +61,7 @@ function NewProjectRequest() {
 
                 <label>Description*</label>
                 <textarea className="u-full-width" placeholder="User Story …" id="_description"></textarea>
-                <label className="example-send-yourself-copy">
-                    <input type="checkbox" />
-                    <span className="label-body">Send a copy to yourself</span>
-                </label>
-                <input type="submit" value="Save" />
+                <input className="button-primary" type="submit" value="Save" />
             </form>
         </div>
     )

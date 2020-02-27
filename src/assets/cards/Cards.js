@@ -2,21 +2,18 @@ import React, { useEffect, useState } from 'react';
 import '../cards/Cards.css';
 
 const Cards = (props) => {
-  useEffect(() =>{
-    console.log('cardHeader', props.cardConfig);
-  });
   
   return (
     <div className="cardContainer">
       <div className="cardHeader">{props.cardConfig.header}</div>
       <div className="cardBody">
-        
-          <a onClick={() =>{console.log('clicked')}}>All open requests</a>
           <hr/>
-          <a>Requests assigned to me</a>
+          <span onClick={() =>{console.log('clicked')}}>All open requests</span>
           <hr/>
-          <a>Open and assigned to me</a>
-        
+          <span>Requests assigned to me</span>
+          <hr/>
+          <span>Open and assigned to me</span>
+          {props.cardConfig.body}
       </div>
       <div className="cardFooter"></div>
     </div>

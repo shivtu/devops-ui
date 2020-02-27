@@ -6,36 +6,17 @@ import Cards from "../../assets/cards/Cards";
 function Dashboard() {
   const [ticketDump, setData] = useState([]);
   const [showModal, modalState] = useState(false);
-  useEffect(() => {
-    const authData = JSON.parse(localStorage.getItem("auth"));
-    console.log('authData', authData);
-    const response = fetch("http://localhost:5000/api/v1/newproject/find/findall", {
-      method: "GET",
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': authData.accessToken
-      }
-    });
-    const data = response.then(data => data.json());
-    data
-      .then(res => {
-        if(res.result === "Unauthenticated request") {
-          localStorage.clear();
-        } else {
-          console.log(res);
-        }
-      })
-      .catch((err) => {
-        console.log("err".err);
-      });
-  }, []);
 
   return (
      <div className="container">
      <h3>Dashboard</h3>
       <div className="row">
         <div className="three columns">
-          <Cards cardConfig={{header: 'Projects'}} />
+          <Cards cardConfig={
+            {
+              header: 'Projects',
+            }
+          } />
         </div>
         <div className="three columns">
           <Cards cardConfig={{header: 'Epics'}} />
@@ -61,7 +42,7 @@ function Dashboard() {
      </div>
       
       
-      {/* {showModal ? <SimpleModal
+      {showModal ? <SimpleModal
         props={
           {
             modalButtonText: "close",
@@ -75,7 +56,7 @@ function Dashboard() {
           }
         }
       /> : null}
-      <button onClick={() => modalState(true)}>Open Modal</button> */}
+      <button onClick={() => modalState(true)}>Open Modal</button>
     </div>
   );
 }

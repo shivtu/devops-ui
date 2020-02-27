@@ -12,5 +12,17 @@
 }
 
 .cardBody {
-  padding: 5px;
+  padding-left: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.cardBody > span {
+  color: gray;
+  width: inherit;
+  cursor: pointer;
+}
+
+.cardBody > span:hover {
+  color: black;
 }
