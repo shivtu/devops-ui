@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 
 // https://www.npmjs.com/package/react-spinners
 // https://www.davidhu.io/react-spinners/
-import ScaleLoader from "react-spinners/ScaleLoader";
+// import ScaleLoader from "react-spinners/ScaleLoader";
 
 import './Login.css';
 import App from '../App';
@@ -37,11 +37,11 @@ function Login() {
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="loginForm">
                 <h2>DO-MGMT</h2>
-                <ScaleLoader
+                {/* <ScaleLoader
                   size={150}
-                  color={"#123abc"}
+                  color={"burlywood"}
                   loading={true}
-                />
+                /> */}
                 {errors.userid && <code className="error">User ID is required</code>}
                 <input className="u-full-width" type="text" placeholder="User ID" name="userid" ref={register({ required: true })} />
                 {errors.password && <code className="error">Password is invalid</code>}

@@ -8,8 +8,8 @@
 }
 
 .loginButton:hover {
-    background-color: seagreen;
-    color: seashell;
+    background-color: burlywood;
+    color: black;
 }
 
 .loginButton:active {

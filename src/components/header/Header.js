@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import './Header.css';
-import { FaUserFriends, FaUserCog, FaUser, FaImage, FaLock, FaSearch } from 'react-icons/fa';
+import { FaUserFriends, FaUserCog, FaUser, FaImage, FaLock, FaSearch, FaSignOutAlt } from 'react-icons/fa';
 
 function Header() {
+    const logOut = () => {
+        localStorage.clear();
+        window.location.reload();
+    }
     return (
         <div className="header-section">
             <h5>
@@ -17,6 +21,7 @@ function Header() {
                             <span><FaUser/> <br/>Personal Details</span>
                             <span><FaImage/> <br/>Display Picture</span>
                             <span><FaLock/> Password Settings</span>
+                            <span onClick={logOut}><FaSignOutAlt/> <br/>Log Out</span>
                         </div>
                     </div>
                 </div>
